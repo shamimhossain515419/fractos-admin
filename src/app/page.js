@@ -106,8 +106,8 @@ export default function Home() {
   return (
     <div>
       <Container>
-        <div className="admin-container flex">
-          <div className="admin-left lg:w-3/10 ">
+        <div className="admin-container flex primaryBg">
+          <div className="admin-left lg:w-3/10 secondBg">
             <div className="drawer lg:drawer-open">
               <input
                 id="my-drawer-2"
@@ -118,7 +118,7 @@ export default function Home() {
                 {/* Page content here */}
                 <label
                   htmlFor="my-drawer-2"
-                  className="btn btn-primary drawer-button lg:hidden"
+                  className="btn primary primaryBg drawer-button lg:hidden"
                 >
                   Open
                 </label>
@@ -129,14 +129,14 @@ export default function Home() {
                   aria-label="close sidebar"
                   className="drawer-overlay"
                 ></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 min-h-full secondBg text-base-content">
                   <li>
-                    <a className="font-bold primaryFont lg:text-2xl md:text-1xl sm:text-1xl">
+                    <a className="font-bold primaryFont lg:text-2xl md:text-1xl sm:text-1xl primary hover:text-white">
                       Dashboard
                     </a>
                   </li>
                   <li>
-                    <a className="font-bold primaryFont lg:text-2xl md:text-1xl sm:text-1xl">
+                    <a className="font-bold primaryFont lg:text-2xl md:text-1xl sm:text-1xl primary hover:text-white">
                       Home
                     </a>
                   </li>
@@ -145,101 +145,38 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="admin-right w-full lg:w-7/10 md:w-7/10 sm:w-7/10 bg-white">
-            <h1 className="text-3xl font-bold text-black px-1 py-2">
+          <div className="admin-right w-full lg:w-7/10 md:w-7/10 sm:w-7/10 primaryBg">
+            <h1 className="text-3xl font-bold primary px-1 py-2">
               Welcome !
             </h1>
 
-            <div className="upper-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2 bg-[#11162B] text-white ">
+            <div className="upper-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2  primaryBg text-white ">
               <div className="w-full text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-white"> 89600</h1>
-                <h1 className="text-1xl font-bold text-white">
+                <h1 className="text-2xl font-bold primary"> 89600</h1>
+                <h1 className="text-1xl font-bold secondColor">
                   Life time total sell
                 </h1>
               </div>
               <div className="w-full  text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-white">9659600</h1>
-                <h1 className="text-1xl font-bold text-white">
+                <h1 className="text-2xl font-bold primary">9659600</h1>
+                <h1 className="text-1xl font-bold secondColor">
                   Income amounts
                 </h1>
               </div>
               <div className="w-full  text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-white">34600</h1>
-                <h1 className="text-1xl font-bold text-white">Total users</h1>
+                <h1 className="text-2xl font-bold primary">34600</h1>
+                <h1 className="text-1xl font-bold secondColor">Total users</h1>
               </div>
               <div className="w-full text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-white">600</h1>
-                <h1 className="text-1xl font-bold text-white">Total visits</h1>
+                <h1 className="text-2xl font-bold primary">600</h1>
+                <h1 className="text-1xl font-bold secondColor">Total visits</h1>
               </div>
             </div>
 
-            {/* <div className="middle grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2 mt-4">
-              <div className="middle-left lg:w-[50] md:w-[50] sm:w-[50] h-[350px] py-12 bg-[#11162B]  border">
-                <h1 className="text-1xl font-bold px-2 py-2 text-white">Total Revenue</h1>
 
-                <ResponsiveContainer>
-                  <LineChart
-                    width={500}
-                    height={300}
-                    data={data}
-                    margin={{
-                      top: 5,
-                      right: 30,
-                      left: 20,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line
-                      type="monotone"
-                      dataKey="pv"
-                      stroke="#8884d8"
-                      activeDot={{ r: 8 }}
-                    />
-                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-              <div className="middle-right  h-[350px] py-12 bg-[#11162B] border text-white">
-                <h1 className="text-1xl font-bold px-2 py-2 text-white">
-                  Total Analytics
-                </h1>
-
-                <ResponsiveContainer>
-                  <LineChart
-                    width={500}
-                    height={300}
-                    data={data2}
-                    margin={{
-                      top: 5,
-                      right: 30,
-                      left: 20,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line
-                      type="monotone"
-                      dataKey="pv"
-                      stroke="#8884d8"
-                      activeDot={{ r: 8 }}
-                    />
-                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </div> */}
-            <div className="middle flex flex-col sm:flex-row px-2 mt-4 ">
-              <div className="middle-left w-full sm:w-1/2 h-[400px] py-12 bg-[#11162B] border">
-                <h1 className="text-1xl font-bold px-2 py-2 text-white">
+            <div className="middle flex flex-col sm:flex-row px-2 mt-4 gap-2 ">
+              <div className="middle-left w-full sm:w-1/2 h-[400px] py-12 primaryBg border">
+                <h1 className="text-1xl font-bold px-2 py-2 primary">
                   Total Revenue
                 </h1>
 
@@ -270,8 +207,8 @@ export default function Home() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-              <div className="middle-right w-full sm:w-1/2 h-[400px] py-12 bg-[#11162B] border text-white ">
-                <h1 className="text-1xl font-bold px-2 py-2 text-white">
+              <div className="middle-right w-full sm:w-1/2 h-[400px] py-12 primaryBg border text-white ">
+                <h1 className="text-1xl font-bold px-2 py-2 primary">
                   Total Analytics
                 </h1>
 
@@ -307,7 +244,7 @@ export default function Home() {
             <div className="px-2 mt-5  ">
               <div className="lower-part w-full px-2 py-5 border ">
                 <div className="px-2 py-5">
-                  <h1 className="text-1xl font-bold px-2 py-2 text-black">
+                  <h1 className="text-1xl font-bold px-2 py-2 primary">
                     Contact
                   </h1>
 
@@ -321,9 +258,9 @@ export default function Home() {
                               <input type="checkbox" className="checkbox" />
                             </label>
                           </th>
-                          <th className="text-2xl font-bold">Name</th>
-                          <th className="text-2xl font-bold">Job</th>
-                          <th className="text-2xl font-bold">Favorite Color</th>
+                          <th className="text-2xl font-bold primary">Name</th>
+                          <th className="text-2xl font-bold primary">Job</th>
+                          <th className="text-2xl font-bold primary">Favorite Color</th>
                           <th></th>
                         </tr>
                       </thead>
@@ -343,25 +280,21 @@ export default function Home() {
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">
+                                <div className="font-bold primary">
                                   Hart Hagerty
                                 </div>
-                                <div className="text-sm opacity-50 text-black">
+                                <div className="text-sm opacity-50 primary">
                                   United States
                                 </div>
                               </div>
                             </div>
                           </td>
-                          <td className="text-black">
+                          <td className="primary">
                             Zemlak, Daniel and Leannon
-                            <br />
-                            <span className="badge badge-ghost badge-sm">
-                              Desktop Support Technician
-                            </span>
                           </td>
-                          <td className="text-black">Purple</td>
+                          <td className="primary">Purple</td>
                           <th>
-                            <button className="btn btn-ghost btn-xs text-black">
+                            <button className="btn btn-ghost btn-xs primary">
                               details
                             </button>
                           </th>
@@ -381,25 +314,22 @@ export default function Home() {
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">
+                                <div className="font-bold primary">
                                   Brice Swyre
                                 </div>
-                                <div className="text-sm opacity-50 text-black">
+                                <div className="text-sm opacity-50 primary">
                                   China
                                 </div>
                               </div>
                             </div>
                           </td>
-                          <td className="text-black">
+                          <td className="primary">
                             Carroll Group
-                            <br />
-                            <span className="badge badge-ghost badge-sm">
-                              Tax Accountant
-                            </span>
+
                           </td>
-                          <td className="text-black">Red</td>
+                          <td className="primary">Red</td>
                           <th>
-                            <button className="btn btn-ghost btn-xs text-black">
+                            <button className="btn btn-ghost btn-xs primary">
                               details
                             </button>
                           </th>
@@ -419,25 +349,22 @@ export default function Home() {
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">
+                                <div className="font-bold primary">
                                   Marjy Ferencz
                                 </div>
-                                <div className="text-sm opacity-50 text-black">
+                                <div className="text-sm opacity-50 primary">
                                   Russia
                                 </div>
                               </div>
                             </div>
                           </td>
-                          <td className="text-black">
+                          <td className="primary">
                             Rowe-Schoen
-                            <br />
-                            <span className="badge badge-ghost badge-sm">
-                              Office Assistant I
-                            </span>
+
                           </td>
-                          <td className="text-black">Crimson</td>
+                          <td className="primary">Crimson</td>
                           <th>
-                            <button className="btn btn-ghost btn-xs text-black">
+                            <button className="btn btn-ghost btn-xs primary">
                               details
                             </button>
                           </th>
@@ -457,25 +384,22 @@ export default function Home() {
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">
+                                <div className="font-bold primary">
                                   Yancy Tear
                                 </div>
-                                <div className="text-sm opacity-50 text-black">
+                                <div className="text-sm opacity-50 primary">
                                   Brazil
                                 </div>
                               </div>
                             </div>
                           </td>
-                          <td className="text-black">
+                          <td className="primary">
                             Wyman-Ledner
-                            <br />
-                            <span className="badge badge-ghost badge-sm">
-                              Community Outreach Specialist
-                            </span>
+
                           </td>
-                          <td className="text-black">Indigo</td>
+                          <td className="primary">Indigo</td>
                           <th>
-                            <button className="btn btn-ghost btn-xs text-black">
+                            <button className="btn btn-ghost btn-xs primary">
                               details
                             </button>
                           </th>
