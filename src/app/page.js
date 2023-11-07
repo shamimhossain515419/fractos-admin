@@ -268,7 +268,7 @@ export default function Home() {
                             <div className="flex items-center space-x-3">
                               <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
-                                  <img
+                                  <Image
                                     src="/tailwind-css-component-profile-2@56w.png"
                                     alt="Avatar Tailwind CSS Component"
                                   />
@@ -351,6 +351,7 @@ export default function Home() {
                                 </div>
                               </div>
                               <div>
+                              hossain@gmail.com
                                 <div className="font-bold text-black">Marjy Ferencz</div>
                                 <div className="text-sm opacity-50 text-black">Russia</div>
                               </div>
