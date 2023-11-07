@@ -10,8 +10,6 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  BarChart,
-  Bar,
 } from "recharts";
 
 const data = [
@@ -104,8 +102,6 @@ const data2 = [
   },
 ];
 
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div>
@@ -134,12 +130,15 @@ export default function Home() {
                   className="drawer-overlay"
                 ></label>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                 
                   <li>
-                    <a>Dashboard</a>
+                    <a className="font-bold primaryFont lg:text-2xl md:text-1xl sm:text-1xl">
+                      Dashboard
+                    </a>
                   </li>
                   <li>
-                    <a>Home</a>
+                    <a className="font-bold primaryFont lg:text-2xl md:text-1xl sm:text-1xl">
+                      Home
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -151,28 +150,32 @@ export default function Home() {
               Welcome !
             </h1>
 
-            <div className="upper-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2 ">
+            <div className="upper-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2 bg-[#11162B] text-white ">
               <div className="w-full text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-black"> 89600</h1>
-                <h1 className="text-1xl font-bold text-black">Life time total sell</h1>
+                <h1 className="text-2xl font-bold text-white"> 89600</h1>
+                <h1 className="text-1xl font-bold text-white">
+                  Life time total sell
+                </h1>
               </div>
               <div className="w-full  text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-black">9659600</h1>
-                <h1 className="text-1xl font-bold text-black">Income amounts</h1>
+                <h1 className="text-2xl font-bold text-white">9659600</h1>
+                <h1 className="text-1xl font-bold text-white">
+                  Income amounts
+                </h1>
               </div>
               <div className="w-full  text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-black">34600</h1>
-                <h1 className="text-1xl font-bold text-black">Total users</h1>
+                <h1 className="text-2xl font-bold text-white">34600</h1>
+                <h1 className="text-1xl font-bold text-white">Total users</h1>
               </div>
               <div className="w-full text-center py-7 shadow-md">
-                <h1 className="text-2xl font-bold text-black">600</h1>
-                <h1 className="text-1xl font-bold text-black">Total visits</h1>
+                <h1 className="text-2xl font-bold text-white">600</h1>
+                <h1 className="text-1xl font-bold text-white">Total visits</h1>
               </div>
             </div>
 
-            <div className="middle grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2 mt-4">
-              <div className="middle-left  w-full lg:w-[50] md:w-[50] h-[350px] py-12  border">
-                <h1 className="text-1xl font-bold px-2 py-2 text-black">Total Revenue</h1>
+            {/* <div className="middle grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-2 px-2 mt-4">
+              <div className="middle-left lg:w-[50] md:w-[50] sm:w-[50] h-[350px] py-12 bg-[#11162B]  border">
+                <h1 className="text-1xl font-bold px-2 py-2 text-white">Total Revenue</h1>
 
                 <ResponsiveContainer>
                   <LineChart
@@ -201,8 +204,8 @@ export default function Home() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-              <div className="middle-right  w-full lg:w-[50] md:w-[50] h-[350px] py-12 border">
-                <h1 className="text-1xl font-bold px-2 py-2 text-black">
+              <div className="middle-right  h-[350px] py-12 bg-[#11162B] border text-white">
+                <h1 className="text-1xl font-bold px-2 py-2 text-white">
                   Total Analytics
                 </h1>
 
@@ -233,12 +236,80 @@ export default function Home() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
+            </div> */}
+            <div className="middle flex flex-col sm:flex-row px-2 mt-4 ">
+              <div className="middle-left w-full sm:w-1/2 h-[400px] py-12 bg-[#11162B] border">
+                <h1 className="text-1xl font-bold px-2 py-2 text-white">
+                  Total Revenue
+                </h1>
+
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart
+                    width={500} // You can adjust this as needed
+                    height={300}
+                    data={data}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="pv"
+                      stroke="#8884d8"
+                      activeDot={{ r: 8 }}
+                    />
+                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="middle-right w-full sm:w-1/2 h-[400px] py-12 bg-[#11162B] border text-white ">
+                <h1 className="text-1xl font-bold px-2 py-2 text-white">
+                  Total Analytics
+                </h1>
+
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart
+                    width={500} // You can adjust this as needed
+                    height={300}
+                    data={data2}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="pv"
+                      stroke="#8884d8"
+                      activeDot={{ r: 8 }}
+                    />
+                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
 
             <div className="px-2 mt-5  ">
-              <div className="lower-part w-full px-2 py-5 bg-gray-200  border">
+              <div className="lower-part w-full px-2 py-5 border ">
                 <div className="px-2 py-5">
-                  <h1 className="text-1xl font-bold px-2 py-2 text-black">Contact</h1>
+                  <h1 className="text-1xl font-bold px-2 py-2 text-black">
+                    Contact
+                  </h1>
 
                   <div className="overflow-x-auto">
                     <table className="table">
@@ -268,14 +339,13 @@ export default function Home() {
                             <div className="flex items-center space-x-3">
                               <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
-                                  <img
-                                    src="/tailwind-css-component-profile-2@56w.png"
-                                    alt="Avatar Tailwind CSS Component"
-                                  />
+                                  {/* image boshbe */}
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">Hart Hagerty</div>
+                                <div className="font-bold text-black">
+                                  Hart Hagerty
+                                </div>
                                 <div className="text-sm opacity-50 text-black">
                                   United States
                                 </div>
@@ -307,15 +377,16 @@ export default function Home() {
                             <div className="flex items-center space-x-3">
                               <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
-                                  <img
-                                    src="/tailwind-css-component-profile-3@56w.png"
-                                    alt="Avatar Tailwind CSS Component"
-                                  />
+                                  {/* image boshbe */}
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">Brice Swyre</div>
-                                <div className="text-sm opacity-50 text-black">China</div>
+                                <div className="font-bold text-black">
+                                  Brice Swyre
+                                </div>
+                                <div className="text-sm opacity-50 text-black">
+                                  China
+                                </div>
                               </div>
                             </div>
                           </td>
@@ -344,15 +415,16 @@ export default function Home() {
                             <div className="flex items-center space-x-3">
                               <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
-                                  <img
-                                    src="/tailwind-css-component-profile-4@56w.png"
-                                    alt="Avatar Tailwind CSS Component"
-                                  />
+                                  {/* image boshbe */}
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">Marjy Ferencz</div>
-                                <div className="text-sm opacity-50 text-black">Russia</div>
+                                <div className="font-bold text-black">
+                                  Marjy Ferencz
+                                </div>
+                                <div className="text-sm opacity-50 text-black">
+                                  Russia
+                                </div>
                               </div>
                             </div>
                           </td>
@@ -381,15 +453,16 @@ export default function Home() {
                             <div className="flex items-center space-x-3">
                               <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
-                                  <img
-                                    src="/tailwind-css-component-profile-5@56w.png"
-                                    alt="Avatar Tailwind CSS Component"
-                                  />
+                                  {/* image boshbe */}
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-black">Yancy Tear</div>
-                                <div className="text-sm opacity-50 text-black">Brazil</div>
+                                <div className="font-bold text-black">
+                                  Yancy Tear
+                                </div>
+                                <div className="text-sm opacity-50 text-black">
+                                  Brazil
+                                </div>
                               </div>
                             </div>
                           </td>
@@ -408,8 +481,6 @@ export default function Home() {
                           </th>
                         </tr>
                       </tbody>
-    
-
                     </table>
                   </div>
                 </div>
